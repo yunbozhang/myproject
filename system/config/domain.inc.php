@@ -1,7 +1,7 @@
 <?php 
 
 return array (
-  'v1m.m-xiang.com' => 
+  'www.yuangou.com' => 
   array (
     'm' => 'mobile',
     'c' => 'mobile',
