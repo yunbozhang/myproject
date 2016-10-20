@@ -1,20 +1,23 @@
-<?php defined('G_IN_SYSTEM')or exit('No permission resources.'); ?><!DOCTYPE html>
+<?php defined('G_IN_SYSTEM')or exit('No permission resources.'); ?>
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>登录 - <?php echo $webname; ?>触屏版</title>
+    <title>个人主页 - <?php echo $webname; ?>触屏版</title>
     <meta content="app-id=518966501" name="apple-itunes-app" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
-    <link href="<?php echo G_TEMPLATES_CSS; ?>/mobile/comm.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo G_TEMPLATES_CSS; ?>/mobile/login.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo G_TEMPLATES_CSS; ?>/mobile/comm.css?v=130715" rel="stylesheet" type="text/css" />
+	<link href="<?php echo G_TEMPLATES_CSS; ?>/mobile/userindex.css" rel="stylesheet" type="text/css" />
 	<script src="<?php echo G_TEMPLATES_JS; ?>/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
-	<script id="pageJS" data="<?php echo G_TEMPLATES_JS; ?>/mobile/Login.js" language="javascript" type="text/javascript"></script>
+	<script id="pageJS" data="<?php echo G_TEMPLATES_JS; ?>/mobile/userindex.js" language="javascript" type="text/javascript"></script>
 </head>
-<body>
-    <div class="h5-1yyg-v1" id="content">
+<body id="loadingPicBlock">
+    <div class="h5-1yyg-v11">
         
 <!-- 栏目页面顶部 -->
 
@@ -25,52 +28,56 @@
         <div class="head-l">
 	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>返回</b></a>
         </div>
-        <h2>登录</h2>
+        <h2>个人主页</h2>
         <div class="head-r">
-	        <a href="<?php echo WEB_PATH; ?>/mobile/mobile" class="z-Home"></a>
+	        
         </div>
     </header>
 
-        <section>
-	        <div class="registerCon">
-    	        <ul>
-        	        <li class="accAndPwd">
-            	        <dl><input id="txtAccount" type="text" placeholder="请输入您的手机号码/邮箱" class="lEmail"><s class="rs4"></s></dl>
-                        <dl>
-                            <input type="password" id="txtPassword" class="lPwd" placeholder="密码">
-                            <s class="rs3"></s>
-                        </dl>
-                        <dl>
-                            <input type="text" id="txtVerify" class="lVerify" placeholder="验证码"><span class="fog"><img id="checkcode" src="<?php echo WEB_PATH; ?>/api/checkcode/image/80_27/"/></span>
-                            <s class="rs3"></s>
-                        </dl>
-                    </li>
-                    <li><a href="javascript:;" id="btnLogin" class="nextBtn orgBtn">登 录</a>
-					
-					<input name="hidLoginForward" type="hidden" id="hidLoginForward" value="<?php echo WEB_PATH; ?>/mobile/home" /></li>
-                    <li class="rSelect"><a href="<?php echo WEB_PATH; ?>/mobile/user/findpassword">忘记密码？</a>
-					<b></b><a href="<?php echo WEB_PATH; ?>/mobile/user/register">新用户注册</a></li>
-                </ul>
-	        </div>
-        </section>
+   <section>
+	<div class="mainCon">
+    	<div class="mBanner">
+        	<ul>
+            	<li class="mUserHead"><img src="<?php echo G_UPLOAD_PATH; ?>/<?php echo $member['img']; ?>"></li><li class="mUserInfo"><p><?php echo get_user_name($member['uid']); ?></p><br/>福分：<?php echo $member['score']; ?><br/>经验值：<?php echo $member['jingyan']; ?><span class="z-class-icon03"><s></s><?php echo $member['yungoudj']; ?></span></li>
+            </ul>
+        </div>
+        <div class="g-snav" id="divMidNav">
+        	<span class="g-snav-lst mCurr"><a href="javascript:void(0);"><?php echo _cfg('web_name_two'); ?>记录</a></span>
+            <span class="g-snav-lst"><a href="javascript:void(0);">获得的商品</a></span>
+            <span class="g-snav-lst"><a href="javascript:void(0);">晒单</a></span>
+        </div>
+        <input name="hdUserID" type="hidden" id="hdUserID" value="<?php echo $member['uid']; ?>" />
+        <!--云购记录-->
+        <div id="divBuyRecord" class="mBuyRecord">
+        
+        </div>
+        <!--获得商品-->
+        <div id="divGetGoods" class="mBuyRecord" style="display:none">
+   
+        </div>
+        <!--晒单-->
+        <div id="divSingle" class="mSingle" style="display:none">
+        	<ul>
+             
+            </ul>
+        </div>
+        <a id="btnLoadMore" class="loading" href="javascript:void(0);" style="display:none;">点击加载更多</a>
+        <div id="divLoading" class="loading"><b></b>正在加载</div>
+    </div>
+</section>
         
 <?php include templates("mobile/index","footer");?>
 <script language="javascript" type="text/javascript">
   var Path = new Object();
   Path.Skin="<?php echo G_TEMPLATES_STYLE; ?>";  
   Path.Webpath = "<?php echo WEB_PATH; ?>";
+  Path.imgpath = "<?php echo G_WEB_PATH; ?>/statics";
   
 var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
 function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
 Base.getScript('<?php echo G_TEMPLATES_JS; ?>/mobile/Bottom.js?v='+GetVerNum());
-  var checkcode=document.getElementById('checkcode');
-  checkcode.src = checkcode.src + new Date().getTime();
-  var src=checkcode.src;
-  checkcode.onclick=function(){
-      this.src=src+'/'+new Date().getTime();
-  }
 </script>
-
+ 
     </div>
 </body>
 </html>
