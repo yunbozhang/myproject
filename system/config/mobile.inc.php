@@ -12,11 +12,11 @@
     'mpass' => '',
     'mqianming' => NULL,
   ),
-  'cfg_mobile_on' => 2,
+  'cfg_mobile_on' => 3,
   'cfg_mobile_3' => 
   array (
-    'mid' => '',
-    'mpass' => '',
+    'mid' => 'cf_icq',
+    'mpass' => 'geekit',
     'mqianming' => '',
   ),
 ); 

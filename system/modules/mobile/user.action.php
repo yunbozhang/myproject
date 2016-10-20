@@ -28,6 +28,14 @@ class user extends memberbase {
 		include templates("mobile/user","login");
 
 	}
+    //找到密码
+	public function findpassword(){
+	  $webname=$this->_cfg['web_name'];
+		include templates("mobile/user","findpassword");
+	}
+
+
+
 	//返回注册页面
 	public function register(){
 	  $webname=$this->_cfg['web_name'];
@@ -41,19 +49,18 @@ class user extends memberbase {
 
 		include templates("mobile/user","mobilecheck");
 	}
-
+   //手机校验
 	public function mobilecheck(){
 	    $webname=$this->_cfg['web_name'];
 		$title="验证手机";
 		$time=3000;
-		$name=$this->segment(4);
+		//??????  电话号码如何取过来
+		$name="18910403461";
 		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
-		 //var_dump($member);exit;
+		 // var_dump($member);exit;
 		if(!$member)_message("参数不正确!");
 		if($member['mobilecode']==1){
-			_message("该账号验证成功",WEB_PATH."/mobile/mobile");
-		}
-		if($member['mobilecode']==-1){
+			//_message("该账号验证成功",WEB_PATH."/mobile/mobile");
 			$sendok = send_mobile_reg_code($name,$member['uid']);
 			if($sendok[0]!=1){
 					_message($sendok[1]);
@@ -61,13 +68,16 @@ class user extends memberbase {
 			header("location:".WEB_PATH."/mobile/user/mobilecheck/".$member['mobile']);
 			exit;
 		}
-
-
-		$enname=substr($name,0,3).'****'.substr($name,7,10);
-		$time=120;
 		include templates("mobile/user","mobilecheck");
 	}
 
+   //密码修改
+	public function modifypassword(){
+	    $webname=$this->_cfg['web_name'];
+	    $mobilename=$this->segment(4);
+
+		include templates("mobile/user","modifypassword");
+	}
 
 	public function buyDetail(){
 	 $webname=$this->_cfg['web_name'];
