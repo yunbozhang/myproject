@@ -9,9 +9,9 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <meta content="telephone=no" name="format-detection" />
     <link href="<?php echo G_TEMPLATES_CSS; ?>/mobile/comm.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo G_TEMPLATES_CSS; ?>/mobile/login.css" rel="stylesheet" type="text/css" />
-	<script src="<?php echo G_TEMPLATES_JS; ?>/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
-	<script id="pageJS" data="<?php echo G_TEMPLATES_JS; ?>/mobile/Login.js" language="javascript" type="text/javascript"></script>
+	  <link href="<?php echo G_TEMPLATES_CSS; ?>/mobile/login.css" rel="stylesheet" type="text/css" />
+	  <script src="<?php echo G_TEMPLATES_JS; ?>/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+	  <script id="pageJS" data="<?php echo G_TEMPLATES_JS; ?>/mobile/Login.js" language="javascript" type="text/javascript"></script>
 </head>
 <body>
     <div class="h5-1yyg-v1" id="content">

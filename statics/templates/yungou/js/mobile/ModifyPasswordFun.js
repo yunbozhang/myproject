@@ -1,6 +1,14 @@
 $(document).ready(function(){
-    var b="https://passport.1yyg.com";var a=function(){
-        var g=$("#txtPasswordObj");var j=$("#txtPasswordObj2");var h=$("#hidUserName").val().trim();var t=$("#hidKey").val().trim();var v=$("#isCheck");var c=$("#btnPostSet");var k=false;var f=function(x){
+    // var b="https://passport.1yyg.com";
+    var a=function(){
+        var g=$("#txtPasswordObj");
+        var j=$("#txtPasswordObj2");
+        var h=$("#hidUserName").val().trim();
+        var t=$("#hidKey").val().trim();
+        var v=$("#isCheck");
+        var c=$("#btnPostSet");
+        var k=false;
+        var f=function(x){
             var w=function(A,
             B,
             y){

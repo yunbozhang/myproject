@@ -55,7 +55,7 @@ class user extends memberbase {
 		$title="验证手机";
 		$time=3000;
 		//??????  电话号码如何取过来
-		$name="18910403461";
+		$name=$this->segment(4);
 		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
 		 // var_dump($member);exit;
 		if(!$member)_message("参数不正确!");
