@@ -38,7 +38,7 @@
 	            <input type="hidden" id="inpMobile" value="<?php echo $name; ?>" />
     	        <ul>
         	        <li><input type="text" id="mobileCode" placeholder="请输入手机验证码" class="rText"/><s class="rs2"></s></li>
-                    <li><a href="<?php echo WEB_PATH; ?>/mobile/user/modifypassword" id="btnPostCode" class="nextBtn  orgBtn">确认，下一步</a></li>
+                    <li><a href="javascript:;" id="btnPostCode" class="nextBtn  orgBtn">确认，下一步</a></li>
                     <li style="font-size:12px;">如未收到验证短信，请在120秒后点击重新发送。</li>
                     <li><a id="btnGetCode" class="resendBtn grayBtn">重新发送</a></li>
                 </ul>

@@ -35,7 +35,7 @@
 	        <div class="registerCon">
     	        <ul>
         	        <li class="accAndPwd">
-            	        <dl><input id="txtAccount" type="text" placeholder="请输入您的手机号码/邮箱" class="lEmail"><s class="rs4"></s></dl>
+            	        <dl><input id="txtAccount" type="text" placeholder="请输入您的手机号码" class="lEmail"><s class="rs4"></s></dl>
                         <dl>
                             <input type="password" id="txtPassword" class="lPwd" placeholder="密码">
                             <s class="rs3"></s>

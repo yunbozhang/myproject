@@ -257,9 +257,12 @@ class member extends admin {
 	//删除会员
 	public function del(){
 		$uid=intval($this->segment(4));
+	
 		$this->db->Autocommit_start();		
 		$q1 = $this->db->Query("insert into `@#_member_del` select * from `@#_member` where uid='$uid'");
-		$q2 = $this->db->Query("delete from `@#_member` where uid='$uid'");		
+        
+		$q2 = $this->db->Query("delete from `@#_member` where uid='$uid'");	
+		
 		$q3 = $this->db->Query("delete from `@#_member_band` where `b_uid`='$uid'");
 		if($q1 && $q2){
 			$this->db->Autocommit_commit();
@@ -273,7 +276,7 @@ class member extends admin {
 	public function del_true(){
 		$uid=intval($this->segment(4));
 		$q2 = $this->db->Query("delete from `@#_member_del` where uid='$uid'");		
-		if($q1){
+		if($q2){
 			_message("删除成功");
 		}else{
 			_message("删除失败");

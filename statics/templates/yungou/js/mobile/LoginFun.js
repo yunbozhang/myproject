@@ -24,7 +24,7 @@ $(function() {
             return x.test(y) && w.test(y)
         };
         var o = {
-            txtStr: "请输入您的手机号码/邮箱",
+            txtStr: "请输入您的手机号码",
             txtpwd: "请输入您的登录密码",
             errorU: "请输入正确的手机号/邮箱",
             errorP: "密码长度为6-20位字符",
