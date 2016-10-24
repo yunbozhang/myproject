@@ -44,6 +44,9 @@ $(function() {
             //短信
             var s = function(t) {
                 if (t.state == 0) {
+                    
+                    GetJPData(Gobal.Webpath, "ajax", "sendmobile/"+e.val().trim());
+
                     location.replace(Gobal.Webpath+"/mobile/user/mobilecheck/" + e.val().trim());
                     return
                 } else {
@@ -95,9 +98,6 @@ $(function() {
                 }
             }
             var t = function(u) {
-               alert("OK");
-
-                k();
                 if (u.state == 1) {
                     isLoaded = true;
                     p = u.str;

@@ -6,18 +6,22 @@ $(function() {
         var l = $("#mobileCode");
         var n = $("#btnGetCode");
         var f = $("#btnPostCode");
+
         var p = function(u) {
             var t = /^[0-9a-zA-Z]+$/;
             return t.test(u)
         };
+
         var j = function(u) {
             var t = /^1\d{10}$/;
             return t.test(u)
         };
+
         var m = function(u) {
             var t = /^[0-9a-zA-Z]{6,}$/;
             return t.test(u)
         };
+
         var h = {
             txtStr: "请输入手机验证码",
             error: "验证码输入不正确",
@@ -27,28 +31,32 @@ $(function() {
             retry: "验证码发送失败，请重试",
             codeerr: "验证码发送时间没超过120秒"
         };
+
         var c = {
             txtStr: "确认，下一步",
             checkCode: "正在验证"
         };
+
         var g = {
             txtStr: "重新发送",
             sending: "正在发送"
         };
+
         var e = function(t) {
             $.PageDialog.fail(t)
         };
+ //以上为定义的变量和子函数       
         var d = function() {
             if (!isLoaded) {
                 return
             }
-            var u = l.val();
+            var u = l.val();//验证码
             if (u == "" || u == h.txtStr) {
                 e(h.txtStr);
                 return
             } else {
                 if (!m(u)) {
-                    e(h.error)
+                    e(h.error)  //验证码输入不正确
                 } else {
                     var t = function(v) {
                         if (v.state == 0) {
@@ -62,6 +70,7 @@ $(function() {
                         isLoaded = true
                     };
                     isLoaded = false;
+                    //正在验证
                     f.html(c.checkCode).addClass("grayBtn").unbind("click");                 
 					GetJPData(Gobal.Webpath, "ajax", "mobileregsn/"+o+"/"+ u, t)
                 }

@@ -277,8 +277,10 @@ class member extends admin {
 		$uid=intval($this->segment(4));
 		$q2 = $this->db->Query("delete from `@#_member_del` where uid='$uid'");		
 		if($q2){
+		$this->db->Autocommit_commit();
 			_message("删除成功");
 		}else{
+		$this->db->Autocommit_rollback();
 			_message("删除失败");
 		}			
 	}

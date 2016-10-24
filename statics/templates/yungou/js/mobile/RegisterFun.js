@@ -79,6 +79,7 @@ $(function() {
 
                 //v的状态为0  跳转
                 if (v.state == 0) {
+                    GetJPData(Gobal.Webpath, "ajax", "sendmobile/"+u);
                     location.replace(Gobal.Webpath+"/mobile/user/mobilecheck/" + u);
                     return
                 } else {
@@ -135,6 +136,7 @@ $(function() {
                 }
             };
             GetJPData(Gobal.Webpath, "ajax", "checkname/"+ u, t)
+
         };//代表o结束
 
 

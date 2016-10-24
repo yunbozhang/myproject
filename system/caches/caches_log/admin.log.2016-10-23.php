@@ -132,3 +132,9 @@
 
 
 
+2016-10-23 16:14:42------>array (
+  0 => 'delete from `go_member_del` where uid=\'724\'',
+) 
+
+
+
