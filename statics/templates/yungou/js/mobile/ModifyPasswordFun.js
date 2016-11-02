@@ -5,7 +5,6 @@ $(function() {
         //var h = $("#hidUserName").val().trim();
         var nn = $("#hidUserName");
         var h = nn.attr("value").trim(); 
-        alert(h+"fdsafsdfsdfdsfsdf");
         var t = $("#hidKey").val().trim();
         var v = $("#isCheck");
         var c = $("#btnPostSet");
@@ -57,7 +56,6 @@ $(function() {
                 return
             }
             var w = s ? j.val().trim() : g.val().trim();
-            alert(w+"sdfsfdsfdsfds");
             if (w == "" || w == m.txtStr) {
                 u(m.empty);
                 return
@@ -90,8 +88,6 @@ $(function() {
         };
         var s = false;
         var o = function() {
-            alert("false");
-
             if (s) {
                 s = false;
                 if (j.val() == m.txtStr) {
@@ -103,7 +99,6 @@ $(function() {
                 }
                 v.addClass("noCheck")
             } else {
-                alert("true");
                 s = true;
                 if (g.val() == "") {
                     j.val(m.txtStr)
