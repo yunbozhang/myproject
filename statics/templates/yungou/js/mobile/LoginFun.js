@@ -1,5 +1,6 @@
 $(function() {
     var b = function() {
+
         var h = "_uName";
         var g = $("#txtAccount");
         var k = $("#txtPassword");

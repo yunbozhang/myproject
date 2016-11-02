@@ -71,10 +71,33 @@ class user extends memberbase {
 		include templates("mobile/user","mobilecheck");
 	}
 
+
+//查找手机校验
+	public function findmobilecheck(){
+	    $webname=$this->_cfg['web_name'];
+		$title="验证手机";
+		$time=3000;
+		//??????  电话号码如何取过来
+		$name=$this->segment(4);
+		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
+		 // var_dump($member);exit;
+		if(!$member)_message("参数不正确!");
+		if($member['mobilecode']==1){
+			//_message("该账号验证成功",WEB_PATH."/mobile/mobile");
+			$sendok = send_mobile_reg_code($name,$member['uid']);
+			if($sendok[0]!=1){
+					_message($sendok[1]);
+			}
+			header("location:".WEB_PATH."/mobile/user/findmobilecheck/".$member['mobile']);
+			exit;
+		}
+		include templates("mobile/user","findmobilecheck");
+	}
    //密码修改
 	public function modifypassword(){
 	    $webname=$this->_cfg['web_name'];
 	    $mobilename=$this->segment(4);
+	    
 
 		include templates("mobile/user","modifypassword");
 	}

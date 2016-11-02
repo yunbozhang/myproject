@@ -19,9 +19,9 @@ $(function() {
             return s.test(t)
         };
         var d = {
-            empty: "请输入手机号/邮箱",
-            avible: "该邮箱地址或手机号码未注册",
-            error: "邮箱地址或手机号码不正确",
+            empty: "请输入手机号",
+            avible: "该手机号码未注册",
+            error: "手机号码不正确",
             many: "该帐号请求过于频繁，请稍后再试",
             mailFail: "发送邮件失败，请稍后再试",
             mobileFail: "验证码发送失败，请稍后再试"
@@ -44,10 +44,10 @@ $(function() {
             //短信
             var s = function(t) {
                 if (t.state == 0) {
-                    
+
                     GetJPData(Gobal.Webpath, "ajax", "sendmobile/"+e.val().trim());
 
-                    location.replace(Gobal.Webpath+"/mobile/user/mobilecheck/" + e.val().trim());
+                    location.replace(Gobal.Webpath+"/mobile/user/findmobilecheck/" + e.val().trim());
                     return
                 } else {
                     if (t.state == 2) {

@@ -333,6 +333,30 @@ class ajax extends base {
 	  echo json_encode($userMobile);
 	}
 
+   //将数据注册到数据库
+	public function modifyuserMobile(){
+# 我的修改
+		$name= isset($_GET['username'])? $_GET['username']: $this->segment(4);
+		$pass= isset($_GET['password'])? md5($_GET['password']): md5(base64_decode($this->segment(5)));
+		$time=time();
+		$decode = 0;
+
+
+		//邮箱验证 -1 代表未验证， 1 验证成功 都不等代表等待验证
+		$sql="UPDATE `@#_member` SET password='$pass' where `mobile`='$name'";
+		if(!$name || $this->db->Query($sql)){
+			//header("location:".WEB_PATH."/mobile/user/".$regtype."check"."/"._encrypt($name));
+			//exit;
+			$modifyuserMobile['state']=0;
+		}else{
+			//_message("注册失败！");
+			$modifyuserMobile['state']=1;
+		}
+	  echo json_encode($modifyuserMobile);
+	}
+
+
+
 	//验证输入的手机验证码
 	public function mobileregsn(){
 	    $mobile= $this->segment(4);
