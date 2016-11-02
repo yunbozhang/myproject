@@ -1,7 +1,7 @@
 <?php 
 
 return array (
-  'www.my.com' => 
+  'www.mymy.com' => 
   array (
     'm' => 'mobile',
     'c' => 'mobile',

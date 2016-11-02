@@ -3,10 +3,8 @@ $(function() {
         var g = $("#txtPasswordObj");
         var j = $("#txtPasswordObj2");
         //var h = $("#hidUserName").val().trim();
-
         var nn = $("#hidUserName");
         var h = nn.attr("value").trim(); 
-        h="18910403461";
         alert(h+"fdsafsdfsdfdsfsdf");
         var t = $("#hidKey").val().trim();
         var v = $("#isCheck");
@@ -59,7 +57,7 @@ $(function() {
                 return
             }
             var w = s ? j.val().trim() : g.val().trim();
-            w="";
+            alert(w+"sdfsfdsfdsfds");
             if (w == "" || w == m.txtStr) {
                 u(m.empty);
                 return
@@ -160,9 +158,12 @@ $(function() {
         v.bind("click", o);
         isLoaded = true
     };
-                                 alert("OKKKK123");
-    Base.getScript(Gobal.Skin + "/js/mobile/pageDialog.js", a);
+    //Base.getScript(Gobal.Skin + "/js/mobile/pageDialog.js", a);
 
+var b = function() {
+        Base.getScript(Gobal.Skin + "/js/mobile/pageDialog.js", a)
+    };
+    Base.getScript(Gobal.Skin + "/js/mobile/Comm.js", b);
 
     var base64encodechars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
     var base64decodechars = new Array(

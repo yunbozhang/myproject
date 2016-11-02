@@ -29,3 +29,38 @@
 
 
 2016-11-02 10:45:47更新了全站缓存
+2016-11-02 11:09:48------>array (
+  0 => 'UPDATE `go_admin` SET `logintime`=\'1478056188\' WHERE (`uid`=\'1\')',
+  1 => 'UPDATE `go_admin` SET `loginip`=\'127.0.0.1\' WHERE (`uid`=\'1\')',
+) 
+
+
+
+2016-11-02 11:17:13------>array (
+  0 => 'UPDATE `go_admin` SET `logintime`=\'1478056633\' WHERE (`uid`=\'1\')',
+  1 => 'UPDATE `go_admin` SET `loginip`=\'127.0.0.1\' WHERE (`uid`=\'1\')',
+) 
+
+
+
+2016-11-02 13:55:07------>array (
+  0 => 'delete from `go_member_del` where uid=\'733\'',
+) 
+
+
+
+2016-11-02 13:55:17------>array (
+  0 => 'delete from `go_member` where uid=\'736\'',
+  1 => 'delete from `go_member_band` where `b_uid`=\'736\'',
+) 
+
+
+
+2016-11-02 13:55:28------>array (
+  0 => 'delete from `go_member_del` where uid=\'736\'',
+) 
+
+
+
+
+2016-11-02 14:20:06更新了全站缓存

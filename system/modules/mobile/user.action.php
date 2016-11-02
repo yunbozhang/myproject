@@ -96,7 +96,7 @@ class user extends memberbase {
    //密码修改
 	public function modifypassword(){
 	    $webname=$this->_cfg['web_name'];
-	    $mobilename=$this->segment(4);
+	    $name=$this->segment(4);
 	    
 
 		include templates("mobile/user","modifypassword");
