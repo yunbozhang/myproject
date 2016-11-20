@@ -1,5 +1,5 @@
 $(function() {
-    alert("OK");
+    //alert("OK");
     var c = 10;
     var g = false;
     var a = null;

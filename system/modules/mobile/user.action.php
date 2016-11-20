@@ -95,11 +95,21 @@ class user extends memberbase {
 	}
    //密码修改
 	public function modifypassword(){
-	    $webname=$this->_cfg['web_name'];
+		//判断是否来自上一个页面
+		if ($_SERVER['HTTP_REFERER']=='') {
+					include templates("mobile/user","login");
+
+		}else{
+			$webname=$this->_cfg['web_name'];
 	    $name=$this->segment(4);
 	    
 
 		include templates("mobile/user","modifypassword");
+		}
+
+
+
+	    
 	}
 
 	public function buyDetail(){
