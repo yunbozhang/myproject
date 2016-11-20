@@ -17,12 +17,13 @@
 				'up_soft_type' => 'zip,gz,rar,iso,doc,ppt,wps,xls',
 				'up_media_type' => 'swf,flv,mp3,wav,wma,rmvb',
 				'upsize' => '1024000',
-				'watermark_off' => '0',
+				'watermark_off' => '1',
 				'watermark_condition' => array('width'=>'100','height'=>"100"),
 				'watermark_type' => 'text',
-				'watermark_text' => array('text'=>"yungoucms.com",'color'=>"#ff0000",'size'=>"15",'font'=>""),
+				'watermark_text' => array('text'=>"www.mymy.com",'color'=>"#ff0000",'size'=>"15",'font'=>"/Applications/XAMPP/xamppfiles/htdocs/yuangou/system/modules/api/lib/"),
 				'watermark_image' => 'banner/20141205/93445116772218.jpg',
 				'watermark_position' => 'c',
 				'watermark_apache' => '50',
 				'watermark_good' => '80',
 			);
+			?>

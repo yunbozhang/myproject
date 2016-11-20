@@ -246,14 +246,15 @@ class cart extends base {
 		parent::__construct();
 		$webname=$this->_cfg['web_name'];
 		 $money=$this->segment(4);//获取充值金额
-		 $banktype=$this->segment(5);   //获取选择的银行 CMBCHINA  ICBC CCB
-
+		 //var_dump($money);
+		 $banktype=$this->segment(5);   //获取支付方式   京东  微信  支付宝
+         //var_dump($banktype);die();
 		if(!$this->userinfo){
 		  header("location: ".WEB_PATH."/mobile/user/login");
 		  exit;
 		}
 
-         $zhifutype = $this->db->GetOne("select * from `@#_pay` where `pay_class` = 'alipay'");
+         $zhifutype = $this->db->GetOne("select * from `@#_pay` where `pay_class` = 'weixin'");
 		 if(!$zhifutype){
 			_messagemobile("手机支付只支持易宝,请联系站长开通！");
 		 }

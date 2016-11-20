@@ -3,7 +3,7 @@
 <html>
 <head><title>
 	帐户充值 - {wc:$webname}触屏版
-</title><meta content="app-id=518966501" name="apple-itunes-app" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" /><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black" name="apple-mobile-web-app-status-bar-style" /><meta content="telephone=no" name="format-detection" /><link href="{G_TEMPLATES_CSS}/mobile/comm.css?v=130715" rel="stylesheet" type="text/css" /><link href="{G_TEMPLATES_CSS}/mobile/member.css?v=130726" rel="stylesheet" type="text/css" /><script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script><script id="pageJS" data="{G_TEMPLATES_JS}/mobile/recharge.js" language="javascript" type="text/javascript"></script></head>
+</title><meta content="app-id=518966501" name="apple-itunes-app" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" /><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black" name="apple-mobile-web-app-status-bar-style" /><meta content="telephone=no" name="format-detection" /><link href="{G_TEMPLATES_CSS}/mobile/comm.css?v=130715" rel="stylesheet" type="text/css" /><link href="{G_TEMPLATES_CSS}/mobile/member.css?v=130726" rel="stylesheet" type="text/css" /><script src="{G_TEMPLATES_JS}/mobile/jquery190.js" language="javascript" type="text/javascript"></script><script id="pageJS" data="{G_TEMPLATES_JS}/mobile/rechargeNew.js" language="javascript" type="text/javascript"></script></head>
 <body>
 <div class="h5-1yyg-v1" id="loadingPicBlock">
     
@@ -37,9 +37,13 @@
 	    <article class="clearfix mt10 m-round g-pay-ment g-bank-ct">
 		    <ul id="ulBankList">
 			    <li class="gray6">选择网银充值<em class="orange">10.00</em>元</li>
-			    <li class="gray9" urm="CMBCHINA-WAP"><i class="z-bank-Roundsel"><s></s></i>招商银行</li>
+			    <!-- <li class="gray9" urm="CMBCHINA-WAP"><i class="z-bank-Roundsel"><s></s></i>招商银行</li>
 			    <li class="gray9" urm="ICBC-WAP"><i class="z-bank-Round"><s></s></i>工商银行</li>
-			    <li class="gray9" urm="CCB-WAP"><i class="z-bank-Round"><s></s></i>建设银行</li>
+			    <li class="gray9" urm="CCB-WAP"><i class="z-bank-Round"><s></s></i>建设银行</li> -->
+<!-- 支付的方式修改 -->
+			    <li class="gray9" type="jdPay" ><i class="z-bank-Roundsel"><s></s></i>京东支付</li>
+			    <li class="gray9" type="yeePay"><i class="z-bank-Round"><s></s></i>易宝支付</li>
+
 		    </ul>
 	    </article>
 	    <div class="mt10 f-Recharge-btn">

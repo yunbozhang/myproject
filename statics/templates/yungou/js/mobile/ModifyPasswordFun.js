@@ -78,7 +78,6 @@ $(function() {
                     };
                     isLoaded = false;
                     c.html(r.checkCode).addClass("grayBtn").unbind("click");
-                             alert("OKKKK");
 
                    // GetJPData(Gobal.Webpath, "setuserpwd", "userName=" + h + "&pwd=" + f(w) + "&key=" + t, x)
                     GetJPData(Gobal.Webpath, "ajax", "modifyuserMobile/"+h+"/"+base64encode(utf16to8(f(w))), x)
