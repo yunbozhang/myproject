@@ -1,7 +1,7 @@
 <?php 
  defined('G_IN_SYSTEM') or exit('No permission resources.'); 
 return array( 
-'web_name' => '码梦购 — 惊喜无线',//网站名
+'web_name' => '码梦购',//网站名
 'web_key' => '是一个码梦购系统',//网站关键字
 'web_des' => '是一个码梦购系统',//网站介绍
 'web_path' => 'http://www.mymy.com',//网站地址
@@ -22,7 +22,7 @@ return array(
 'qq' => '1207269646',//qq
 'cell' => '0356-4870691',//联系电话
 'web_logo' => 'banner/logo.png',//logo
-'web_copyright' => 'Copyright © 2011 - 2013, 版权所有 粤ICP备09213115号-12',//版权
+'web_copyright' => 'Copyright © 2016 - 2017, 版权所有 京ICP备16016157号-1',//版权
 'web_name_two' => '码梦购',//短网站名
 'qq_qun' => '123456|456789',//QQ群
 'goods_end_time' => '30',//开奖动画秒数(单位秒)
