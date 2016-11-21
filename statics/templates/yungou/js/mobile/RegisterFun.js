@@ -7,10 +7,14 @@ $(function() {
     //第四步 a下一步按钮  绑定g函数  校验用户名
     //第五步 b勾选绑定p函数  
     //第六步 g中走o函数
+    var user_ip_sub = $("#inpMobile");
     var c = $("#userMobile");
     var ps = $("#txtPassword");
     var a = $("#btnNext");
     var b = $("#isCheck");
+
+
+
     // 定义一个d函数
     var d = function() {
         //k不知道代表什么
@@ -43,7 +47,8 @@ $(function() {
             many: "验证码请求次数过多，请稍后再试",
             retry: "验证码发送失败，请重试",
             msgerror: "系统短息配置不正确",
-            ok: "该号码可以注册"
+            ok: "该号码可以注册",
+            iperror:"您位置不在山西晋城市无法注册"
         };
 
 
@@ -59,7 +64,13 @@ $(function() {
         var i = function(t) {
             $.PageDialog.fail(t)
         };
+
+        var ddd = function(x, w) {
+            $.PageDialog.ok(x, w)
+        };
 //以上只是对子函数和变量的定义
+
+        
 
         //定义一个n函数
         var n = function() {
@@ -225,6 +236,19 @@ $(function() {
             }
             j = !j
         };
+
+
+      var checkip = function(){
+            if (user_ip_sub!="山西省晋城市")
+             {
+                ddd(l.iperror,
+                            function() {
+                                location.replace(Gobal.Webpath+"/mobile/mobile/")
+                            });
+             }
+}
+         //调用检查地理位置
+         checkip();
 
         //下一步按钮绑定点击g
         a.bind("click", g);

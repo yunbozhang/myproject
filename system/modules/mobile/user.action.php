@@ -38,8 +38,24 @@ class user extends memberbase {
 
 	//返回注册页面
 	public function register(){
-	  $webname=$this->_cfg['web_name'];
-		include templates("mobile/user","register");
+		$user_ip = _get_ip();
+		$user_ip1 = _get_ip_dizhi($user_ip);
+
+        //测试
+		//$user_ip1 = _get_ip_dizhi("182.242.39.177");
+
+		$arr =explode(",",$user_ip1);
+		$user_ip_sub = $arr[0];
+		// var_dump($user_ip);
+		// var_dump($user_ip1);
+		// var_dump($arr);
+		// var_dump($arr[0]);
+        
+         $webname=$this->_cfg['web_name'];
+		include templates("mobile/user","register");        
+
+
+	  
 	}
 
 	//返回发送验证码页面
