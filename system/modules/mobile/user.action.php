@@ -45,7 +45,7 @@ class user extends memberbase {
 		//$user_ip1 = _get_ip_dizhi("182.242.39.177");
 
 		$arr =explode(",",$user_ip1);
-		$user_ip_sub = $arr[0];
+		$useripsub = $arr[0];
 		// var_dump($user_ip);
 		// var_dump($user_ip1);
 		// var_dump($arr);

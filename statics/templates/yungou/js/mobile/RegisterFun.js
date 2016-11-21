@@ -7,7 +7,8 @@ $(function() {
     //第四步 a下一步按钮  绑定g函数  校验用户名
     //第五步 b勾选绑定p函数  
     //第六步 g中走o函数
-    var user_ip_sub = $("#inpMobile");
+    var useripsub = $("#aaa");
+    var user_ip_sub = useripsub.attr("value").trim();
     var c = $("#userMobile");
     var ps = $("#txtPassword");
     var a = $("#btnNext");
@@ -239,6 +240,8 @@ $(function() {
 
 
       var checkip = function(){
+        //console.log(user_ip_sub);
+        //alert(user_ip_sub);
             if (user_ip_sub!="山西省晋城市")
              {
                 ddd(l.iperror,
