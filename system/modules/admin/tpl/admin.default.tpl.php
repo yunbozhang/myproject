@@ -55,7 +55,7 @@
                 <section class="135editor" style="position: static; box-sizing: border-box; border: 0px none; padding: 0px;" data-id="45" data-color="rgb(55, 74, 174)" data-custom="rgb(55, 74, 174)">
                     <section style="margin: 0.8em 0 0.5em 0;font-size: 16px;line-height: 32px; font-weight: bold;">
                         <section class="135brush" data-brushtype="text" style="margin-left: 36px; font-style: normal; color: rgb(55, 74, 174); border-color: rgb(55, 74, 174);">
-                            <span style="font-size: 18px;"><section class="article135" label="powered by 135editor.com" style="font-family:微软雅黑;font-size:16px;"><p style="white-space: normal;">河南诚和道科技有限公司为你提供此程序源码，我们会定时为大家更新云购程序，最新的程序更新会在我们的微信公众平台为大家发布，请扫描微信二维码或在微信客户端搜索微信公众号：chenghedao（前一百名免费送app）</p> </section><strong></strong>
+                            <span style="font-size: 18px;"><section class="article135" label="powered by 135editor.com" style="font-family:微软雅黑;font-size:16px;"><p style="white-space: normal;">阳城码梦信息技术有限公司为你提供此程序源码</p> </section><strong></strong>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         </section>
@@ -64,7 +64,7 @@
                 </section>
             </section>
             <p style="line-height: 2em; text-align: left;">
-                <span style="font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 19.6px;"><img src="http://www.chenghedao.com/images/erweima.png" style="font-family: &#39;Microsoft YaHei&#39;; font-size: 18px; line-height: normal; text-align: center; white-space: normal;"/><span style="font-family: &#39;Microsoft YaHei&#39;; line-height: 19.6px; font-size: 16px;"></span></span>
+                <span style="font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 19.6px;"><img src="" style="font-family: &#39;Microsoft YaHei&#39;; font-size: 18px; line-height: normal; text-align: center; white-space: normal;"/><span style="font-family: &#39;Microsoft YaHei&#39;; line-height: 19.6px; font-size: 16px;"></span></span>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             </p>
         </section>
@@ -236,7 +236,7 @@ marqueen('roll').start(50,30);
         <ul>
         	<li><i>程序版本:</i>V5.20<font color="#f60">【<?php echo $text; ?>】</font></li>
 			<li><i>更新时间:</i>2016.03.26</li>
-  <li><i>技术支持：</i><a href="http://www.chenghedao.com">河南诚和道科技有限公司</a></li>
+  <li><i>技术支持：</i><a href="http://www.chenghedao.com">阳城码梦信息技术有限公司</a></li>
       
         </ul>
          
