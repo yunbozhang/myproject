@@ -47,7 +47,7 @@ $(function() {
             error: "请输入正确的手机号码",
             many: "验证码请求次数过多，请稍后再试",
             retry: "验证码发送失败，请重试",
-            msgerror: "系统短息配置不正确",
+            msgerror: "已注册,该账号需修改密码",
             ok: "该号码可以注册",
             iperror:"您位置不在山西晋城市无法注册"
         };
@@ -126,7 +126,7 @@ $(function() {
             var u = h;
             var pass = psv;
             var t = function(v) {
-             //alert(v.state);
+            
                 if (u == h) {
                     if (v.state == 1) {
                         k = 1;
@@ -135,7 +135,9 @@ $(function() {
                     }else if(v.state == 2){
                        k = 1;
                        //系统短息配置不正确
-                       i(l.msgerror)
+                       ddd(l.msgerror,function(){
+                        location.replace(Gobal.Webpath+"/mobile/user/findpassword/");
+                       });
                     } else {
                         if (v.state == 0) {
                             k = 2;

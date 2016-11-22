@@ -44,8 +44,10 @@ function new_addslashes($string){
 	if(!is_array($string)) return addslashes($string);
 	foreach($string as $key => $val) $string[$key] = new_addslashes($val);
 	return $string;
-}
-/*数组转字符串*/function Array2String($Array){
+}
+
+/*数组转字符串*/
+function Array2String($Array){
 		if(!$Array)return false;
 		$Return='';
 		$NullValue="^^^";

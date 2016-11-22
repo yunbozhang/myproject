@@ -240,32 +240,39 @@ class ajax extends base {
 			//邮箱
 			$logintype='email';
 		}
+        
+        //$member=$this->db->GetOne("select * from `@#_member` where `$logintype`='$username' and `password`='$password'");
 
-		$member=$this->db->GetOne("select * from `@#_member` where `$logintype`='$username' and `password`='$password'");
-		if(!$member){
+        //先找用户名
+        $member=$this->db->GetOne("select * from `@#_member` where `$logintype`='$username'");
+        //判断信息是否为空 空则未注册
+        if(!$member){
 			//帐号不存在错误
 			$user['state']=1;
 			$user['num']=-2;
 			echo json_encode($user);die;
 		}
-
-		if($member[$logintype.'code'] != 1){
+        //不为空
+        if($member[$logintype.'code'] != 1){
 			$user['state']=2; //未验证
 			echo json_encode($user);die;
 		}
 
-		if(!is_array($member)){
+		//认证过了
+
+        //再找密码
+		if ($member['password']!=$password) {
 			//帐号或密码错误
-			$user['state']=1;
-			$user['num']=-1;
+            $user['state']=1;
+			$user['num']=-1;		
 		}else{
-		   //登录成功
+			//登录成功
 			_setcookie("uid",_encrypt($member['uid']),60*60*24*7);
 			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);
 
 			$user['state']=0;
-
 		}
+
 		echo json_encode($user);
 	}
 
@@ -273,6 +280,10 @@ class ajax extends base {
 	public function loginok(){
 
 	  $user['Code']=0;
+	  $name= $this->segment(4);
+      $time=time();
+	  $sql="UPDATE `@#_member` SET login_time='$time' where `mobile`='$name'";
+	  $this->db->Query($sql);
 	  echo json_encode($user);
 	}
 	/***********************************注册*********************************/
@@ -285,23 +296,25 @@ class ajax extends base {
 
 		$name= $this->segment(4);
 
-		$regtype=null;
+		//$regtype=null;
 		if(_checkmobile($name)){
-			$regtype='mobile';
-			$cfg_mobile_type  = 'cfg_mobile_'.$config_mobile['cfg_mobile_on'];
-			$config_mobile = $config_mobile[$cfg_mobile_type];
-			if(empty($config_mobile['mid']) && empty($config_email['mpass'])){
+			// $regtype='mobile';
+			// $cfg_mobile_type  = 'cfg_mobile_'.$config_mobile['cfg_mobile_on'];
+			// $config_mobile = $config_mobile[$cfg_mobile_type];
+			// if(empty($config_mobile['mid']) && empty($config_email['mpass'])){
 
-				 $user['state']=2;//_message("系统短息配置不正确!");
-				 echo json_encode($user);
-				 exit;
-			}
-		}
-		$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
+			// 	 $user['state']=2;//_message("系统短息配置不正确!");
+			// 	 echo json_encode($user);
+			// 	 exit;
+			// }
+			$member=$this->db->GetOne("SELECT * FROM `@#_member` WHERE `mobile` = '$name' LIMIT 1");
 		if(is_array($member)){
 			if($member['mobilecode']==1 || $member['emailcode']==1){
 			  $user['state']=1;//_message("该账号已被注册");
-			}else{
+			}elseif($member['mobilecode']!=-1){
+				$user['state']=2;
+			}
+			else{
 			  $sql="DELETE from`@#_member` WHERE `mobile` = '$name'";
 			  $this->db->Query($sql);
 			  $user['state']=0;
@@ -310,18 +323,23 @@ class ajax extends base {
 		    $user['state']=0;//表示数据库里没有该帐号
 		}
 
+		}
+		
+
 	    echo json_encode($user);
 	}
 
 	//将数据注册到数据库
 	public function userMobile(){
+		$user_ip = _get_ip();
+		$user_ip1 = _get_ip_dizhi($user_ip);
 # 我的修改
 		$name= isset($_GET['username'])? $_GET['username']: $this->segment(4);
 		$pass= isset($_GET['password'])? md5($_GET['password']): md5(base64_decode($this->segment(5)));
 		$time=time();
 		$decode = 0;
 		//邮箱验证 -1 代表未验证， 1 验证成功 都不等代表等待验证
-		$sql="INSERT INTO `@#_member`(`mobile`,password,img,emailcode,mobilecode,yaoqing,time)VALUES('$name','$pass','photo/member.jpg','-1','-1','$decode','$time')";
+		$sql="INSERT INTO `@#_member`(`mobile`,password,img,emailcode,mobilecode,yaoqing,time,user_ip)VALUES('$name','$pass','photo/member.jpg','-1','-1','$decode','$time','$user_ip1')";
 		if(!$name || $this->db->Query($sql)){
 			//header("location:".WEB_PATH."/mobile/user/".$regtype."check"."/"._encrypt($name));
 			//exit;

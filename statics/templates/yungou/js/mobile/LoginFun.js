@@ -33,7 +33,7 @@ $(function() {
             loginerr1: "登录帐号未注册",
             loginerr2: "账号被冻结，请与客服联系",
             loginerr3: "失败次数超限，被冻结5分钟",
-            loginerr4: "登录失败，请重试",
+            loginerr4: "登录失败，账号需要修改密码",
             showPWD: "显示密码",
             loginerr5: "必须输入帐号和密码",
             loginok: "登录成功"
@@ -79,7 +79,7 @@ $(function() {
                                         expires: 1,
                                         path: "/"
                                     });*/
-                                    GetJPData(Gobal.Webpath, "ajax", "loginok",
+                                    GetJPData(Gobal.Webpath, "ajax", "loginok/"+y,
                                     function(A) {
 									   if(A.Code==0){
 											var B = function() {
@@ -95,18 +95,23 @@ $(function() {
                                     })
                                 } else {
                                     if (z.state == 1 && z.num == -1) {
-                                        v(o.loginerr0)
+                                        v(o.loginerr0)   //登录帐号或密码不正确
                                     } else {
+
                                         if (z.state == 1 && z.num == -2) {
-                                            v(o.loginerr1)
+                                            v(o.loginerr1)  //登录帐号未注册
                                         } else {
+
                                             if (z.state == 1 && z.num == -3) {
-                                                v(o.loginerr2)
+                                                v(o.loginerr2)  //账号被冻结，请与客服联系
                                             } else {
                                                 if (z.state == 3) {
-                                                    v(o.loginerr3)
+                                                    v(o.loginerr3)  //失败次数超限，被冻结5分钟
                                                 } else {
-                                                    v(o.loginerr4)
+                                                    i(o.loginerr4,function(){
+                                                location.replace(Gobal.Webpath+"/mobile/user/findpassword/")});
+                                                    
+
                                                 }
                                             }
                                         }

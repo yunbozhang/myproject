@@ -42,25 +42,26 @@ $(function() {
             }
 
             //短信
-            var s = function(t) {
-                if (t.state == 0) {
+            // var s = function(t) {
+            //     if (t.state == 0) {
 
                     GetJPData(Gobal.Webpath, "ajax", "sendmobile/"+e.val().trim());
 
                     location.replace(Gobal.Webpath+"/mobile/user/findmobilecheck/" + e.val().trim());
-                    return
-                } else {
-                    if (t.state == 2) {
-                        m.html(i.txtStr).removeClass("grayBtn").bind("click", f);
-                        h(d.many)
-                    } else {
-                        m.html(i.txtStr).removeClass("grayBtn").bind("click", f);
-                        h(d.mobileFail)
-                    }
-                }
-            };
+                    
+                // } else {
+                //     if (t.state == 2) {
+                //         m.html(i.txtStr).removeClass("grayBtn").bind("click", f);
+                //         h(d.many)
+                //     } else {
+                //         m.html(i.txtStr).removeClass("grayBtn").bind("click", f);
+                //         h(d.mobileFail)
+                //     }
+                // }
+            //};
             //GetJPData(Gobal.Webpath, "sendfindsms", "mobile=" + e.val().trim() + "&sn=" + p, s)
-            GetJPData(Gobal.Webpath, "ajax", "userMobile/"+e.val().trim(), s)
+            //去掉存储
+            //GetJPData(Gobal.Webpath, "ajax", "userMobile/"+e.val().trim(), s)
         };
 
         //邮件                
@@ -98,7 +99,7 @@ $(function() {
                 }
             }
             var t = function(u) {
-                if (u.state == 1) {
+                if (u.state == 1||u.state == 2) {
                     isLoaded = true;
                     p = u.str;
                     if (l(s)) {
