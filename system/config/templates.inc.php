@@ -3,9 +3,9 @@
  return array (
   'yungou' => 
   array (
-    'name' => '仿网易',
+    'name' => '码梦',
     'dir' => 'yungou',
-    'html' => 'fangwangyi-html',
+    'html' => 'boliliu',
     'author' => '',
   ),
 )
