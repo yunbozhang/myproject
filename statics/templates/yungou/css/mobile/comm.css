@@ -146,7 +146,7 @@ h1,h2,h3,h4,b{
 	font-size:0;
 	line-height:0;
 }
-.z-Member,.z-shop,.z-HReturn s,.z-sort,.z-sort i,.z-Home,.z-Site,.z-RCornerBtn,.z-RCornerBtn i,.u-nav,.z-arrowh,.head li a.pCar {
+.z-Member,.z-shop,.z-HReturn s,.z-sort,.z-sort i,.z-Home,.z-Site,.u-nav,.z-arrowh,.head li a.pCar {
 	background:url(../../images/mobile/mainIcon.png);
 	background-size:80px auto;
 }
@@ -221,8 +221,8 @@ a.z-CloseBtn,a.z-DefineBtn,a.z-ShoppingBtn,a.z-cartBtn {
 	font-size:18px;
 }
 a.orgBtn {
-	background:#f60;
-	border:1px solid #ef6000;
+	background:#e44964;
+	border:1px solid #bd3652;
 }
 a.grayBtn {
 	background:#ccc;
@@ -333,7 +333,7 @@ a.grayBtn {
 	height:12px;
 	border-radius:12px;
 	display:inline-block;
-	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#ff8a00),color-stop(1,#f60));
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#e44964),color-stop(1,#e44964));
 }
 .header {
 	height:44px;
@@ -391,7 +391,7 @@ a.grayBtn {
 .z-shop em {
 	display:inline-block;
 	border-radius:10px;
-	background:#F60;
+	background:#e44964;
 	border:1px solid #fff;
 	padding:0 3px 0 3px;
 	position:absolute;
@@ -402,7 +402,7 @@ a.grayBtn {
 	font-size:8px;
 	color:#fff;
 	font-weight:bold;
-	box-shadow:0 1px 1px #DE4900;
+	box-shadow:0 1px 1px #bd3652;
 }
 .z-Home {
 	background-position:8px -72px;
@@ -440,8 +440,8 @@ a.z-Site {
 	height:34px;
 	display:inline-block;
 	background-position:0 -110px;
-	background-color:#f60;
-	position:absolute;
+/*	background-color:#f60;
+*/	position:absolute;
 	left:0;
 	top:0;
 }
