@@ -47,7 +47,7 @@ class user extends memberbase {
 		}
 
 		$arr =explode(",",$user_ip1);
-		// $useripsub = $arr[0];
+		$useripsub = $arr[0];
 		// var_dump($user_ip1);
 		// var_dump($arr);
 		// var_dump($arr[0]);
