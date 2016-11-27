@@ -153,10 +153,32 @@ $(function() {
 
         };//代表o结束
 
+var checkip = function(){
+        //console.log(user_ip_sub);
+        //alert(user_ip_sub);
+           if (user_ip_sub!="") {
+
+           }
+
+
+            if (user_ip_sub!="山西省晋城市")
+             {
+                ddd(l.iperror,
+                            function() {
+                                location.replace(Gobal.Webpath+"/mobile/mobile/")
+                            });
+                return 0;
+             }else{
+                return 1;
+             }
+}
+
+
 
         //定义一个g函数   校验用户名
         var g = function() {
-
+            //调用检查地理位置
+            if (checkip()) {
             //用户名
             h = c.val();
             //密码
@@ -188,6 +210,7 @@ $(function() {
                     }
                 }
             }
+            };
         };
 
 
@@ -239,21 +262,6 @@ $(function() {
             }
             j = !j
         };
-
-
-      var checkip = function(){
-        //console.log(user_ip_sub);
-        //alert(user_ip_sub);
-            if (user_ip_sub!="山西省晋城市")
-             {
-                ddd(l.iperror,
-                            function() {
-                                location.replace(Gobal.Webpath+"/mobile/mobile/")
-                            });
-             }
-}
-         //调用检查地理位置
-         checkip();
 
         //下一步按钮绑定点击g
         a.bind("click", g);

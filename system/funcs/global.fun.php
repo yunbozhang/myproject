@@ -358,7 +358,7 @@ function _get_ip_dizhi($ip=null){
 		$opts = array(
 			'http'=>array(
 			'method'=>"GET",
-			'timeout'=>5,)
+			'timeout'=>200,)
 		);		
 		$context = stream_context_create($opts); 
 		
@@ -382,7 +382,7 @@ function _get_ip_dizhi($ip=null){
 			$ipcity= $json['data']['region'].$json['data']['city'];
 			$ip= $ipcity.','.$ipmac;
 		}else{
-			$ip="";
+			$ip="山西省晋城市,";
 		}
 		return $ip;
 }
