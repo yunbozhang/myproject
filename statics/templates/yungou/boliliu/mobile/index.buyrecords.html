@@ -17,9 +17,9 @@
 	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>返回</b></a>
         </div>
         <h2>{wc:$key}</h2>
-        <div class="head-r">
+        <!-- <div class="head-r">
 	        <a id="btnSort" href="javascript:;" class="z-sort"><i></i>排序<s class="z-SswOn"></s><s class="z-SswNt"></s></a>
-        </div>
+        </div> -->
     </header>
 
     <input name="hidCodeID" type="hidden" id="hidCodeID" value="18101" />
@@ -34,7 +34,7 @@
 					<img id="imgUserPhoto" src="{G_UPLOAD_PATH}/{wc:fun:get_user_key($c['uid'],'img')}"   border="0"/>
 					<s></s></a>
 				</li>
-				<li class="rInfo"><a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$c['uid']}">{wc:fun:userid($c['uid'],'username')}</a>
+				<li class="rInfo"><a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$c['uid']}">{wc:$c['username']}</a>
 					<strong>{wc:if $c['ip']}
 							({wc:fun:get_ip($c['id'],'ipcity')} IP:{wc:fun:get_ip($c['id'],'ipmac')})
 							{wc:if:end}</strong><br>
