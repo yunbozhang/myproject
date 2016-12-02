@@ -7,11 +7,11 @@ class WxPayConf_pub
     //=======【基本信息设置】=====================================
     //微信公众号身份的唯一标识。审核通过后，在微信发送的邮件中查看
 
-    static $APPID = '';
+    static $APPID = 'wx88924a19d22f6ecd';
     //受理商ID，身份标识
-    static $MCHID = '';
+    static $MCHID = '1417446602';
     //商户支付密钥Key。审核通过后，在微信发送的邮件中查看
-    static $KEY = '';
+    static $KEY = '1qazqaz0okm2wsx9ijncvb345678dfgh';
     //JSAPI接口中获取openid，审核后在公众平台开启开发模式后可查看
     static $APPSECRET = '';
 

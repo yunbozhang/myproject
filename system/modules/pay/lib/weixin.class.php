@@ -60,7 +60,7 @@ class weixin {
 	}
 	elseif($unifiedOrderResult["code_url"] != NULL)
 	{
-		$qrcode='http://www.1ybye.com/system/modules/pay/lib/qrcode.js';
+		$qrcode=G_WEB_PATH.'/system/modules/pay/lib/qrcode.js';
 		//从统一支付接口获取到code_url
 		$code_url = $unifiedOrderResult["code_url"];
 		$saomiao="微信安全支付，请扫我";

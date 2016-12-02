@@ -248,21 +248,27 @@ class cart extends base {
 		 $money=$this->segment(4);//获取充值金额
 		 //var_dump($money);
 		 $banktype=$this->segment(5);   //获取支付方式   京东  微信  支付宝
+
          //var_dump($banktype);die();
 		if(!$this->userinfo){
 		  header("location: ".WEB_PATH."/mobile/user/login");
 		  exit;
 		}
 
-         $zhifutype = $this->db->GetOne("select * from `@#_pay` where `pay_class` = 'weixin'");
+         if ($banktype=="wxpay_web") {
+         $sql = "select * from `@#_pay` where `pay_class` = 'wxpay_web'";
+         }elseif($banktype=="weixin"){
+         $sql = "select * from `@#_pay` where `pay_class` = 'weixin'";
+         }
+         $zhifutype = $this->db->GetOne($sql);
 		 if(!$zhifutype){
-			_messagemobile("手机支付只支持易宝,请联系站长开通！");
+			_messagemobile("手机支付只支持微信,请联管理员开通！");
 		 }
 
 		 if(!empty($zhifutype)){
 		    $pay_type_bank=$zhifutype['pay_class'];
 		 }
-
+         //var_dump("OK");
 		 $pay_type_id=$banktype;
 
 
@@ -271,8 +277,11 @@ class cart extends base {
 		//$pay_type_id=isset($_POST['account']) ? $_POST['account'] : false;
 		//$money=intval($_POST['money']);
 		$uid = $this->userinfo['uid'];
+		//var_dump($uid);
 		$pay=System::load_app_class('pay','pay');
+		//var_dump($pay);
 		$pay->pay_type_bank = $pay_type_bank;
+		//var_dump($pay->pay_type_bank);
 		$pay->init($uid,$pay_type_id,'addmoney_record',$money);
 	}
 }
