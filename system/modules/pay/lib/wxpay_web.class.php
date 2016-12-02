@@ -1,4 +1,5 @@
 <?php
+include dirname(__FILE__).DIRECTORY_SEPARATOR."wxpay_web".DIRECTORY_SEPARATOR."WxPayPubHelper.php";
 
 	error_reporting(E_ERROR);
 	ini_set("display_errors","ON");
