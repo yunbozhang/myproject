@@ -9,6 +9,8 @@ class weixin {
 	
 	public function config($config=null){
 			$this->config = $config;
+			var_dump($config);
+
 	}
 	
 	public function send_pay(){

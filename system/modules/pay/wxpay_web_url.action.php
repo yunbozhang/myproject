@@ -1,5 +1,8 @@
 <?php
 defined('G_IN_SYSTEM')or exit('No permission resources.');
+ini_set("display_errors","ON");
+include dirname(__FILE__).'/lib/wxpay_web.class.php';
+
 if ( !function_exists('mylog') ) {
 	function mylog() {
 	}
@@ -48,7 +51,7 @@ class wxpay_web_url extends SystemAction {
 
     public function houtai(){
 
-		include_once dirname(__FILE__)."/lib/wxpay/WxPayPubHelper.php";
+		include_once dirname(__FILE__)."/lib/wxpay_web/WxPayPubHelper.php";
 
 		$pay = $this->db->GetOne("SELECT * from `@#_pay` where `pay_class` = 'wxpay_web'");
 		$config = array();

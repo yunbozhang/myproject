@@ -14,18 +14,18 @@ class wxpay_web {
 			die;
 		}
 
-		include_once dirname(__FILE__)."/wxpay/WxPayPubHelper.php";
-
+		include_once dirname(__FILE__)."/wxpay_web/WxPayPubHelper.php";
+        
 		if ( empty($config['pay_type_data']) ) {
 			$this->db=System::load_sys_class('model');
 			$pay = $this->db->GetOne("SELECT * from `@#_pay` where `pay_class` = 'wxpay_web'");
 			$config['pay_type_data'] = unserialize($pay['pay_key']);
 		}
-
-		WxPayConf_pub::$APPID = $config['pay_type_data']['APPID']['val'];
-		WxPayConf_pub::$MCHID = $config['pay_type_data']['MCHID']['val'];
-		WxPayConf_pub::$KEY = $config['pay_type_data']['KEY']['val'];
-		WxPayConf_pub::$APPSECRET = $config['pay_type_data']['APPSECRET']['val'];
+        var_dump($config['pay_type_data']);
+		//WxPayConf_pub::$APPID = $config['pay_type_data']['APPID']['val'];
+		//WxPayConf_pub::$MCHID = $config['pay_type_data']['id']['val'];
+		//WxPayConf_pub::$KEY = $config['pay_type_data']['key']['val'];
+		// WxPayConf_pub::$APPSECRET = $config['pay_type_data']['APPSECRET']['val'];
 
 		$jsApi = new JsApi_pub();
 

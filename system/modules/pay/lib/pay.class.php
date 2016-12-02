@@ -190,7 +190,8 @@ class pay {
 		$config=array();
 		$config['id'] = $pay_type['pay_key']['id']['val'];			//支付合作ID
 		$config['key'] = $pay_type['pay_key']['key']['val'];		//支付KEY
-		
+		$config['appid'] = $pay_type['pay_key']['appid']['val'];		//支付appid
+
 		$config['shouname'] = _cfg('web_name');						//收款方
 		$config['title'] = _cfg('web_name');						//付款项目
 		$config['money'] = $money;									//付款金额$money
