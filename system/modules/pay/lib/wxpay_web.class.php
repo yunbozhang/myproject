@@ -22,13 +22,13 @@ class wxpay_web {
 			$config['pay_type_data'] = unserialize($pay['pay_key']);
 		}
         var_dump($config['pay_type_data']);
-		WxPayConf_pub::$APPID = $config['pay_type_data']['appid']['val'];
-		WxPayConf_pub::$MCHID = $config['pay_type_data']['id']['val'];
-		WxPayConf_pub::$KEY = $config['pay_type_data']['key']['val'];
+		// WxPayConf_pub::$APPID = 'wx88924a19d22f6ecd';
+		// WxPayConf_pub::$MCHID = '1417446602';
+		// WxPayConf_pub::$KEY = '1qazqaz0okm2wsx9ijncvb345678dfgh';
 		// WxPayConf_pub::$APPSECRET = $config['pay_type_data']['APPSECRET']['val'];
 
 		$jsApi = new JsApi_pub();
-
+        var_dump($jsApi);
 		if (!isset($_GET['code'])){
 			$url = G_WEB_PATH.'/index.php/pay/wxpay_web_url/?money='.$config['money'].'&out_trade_no='.$config['code'];
 			$url = $jsApi->createOauthUrlForCode(urlencode($url));
@@ -41,8 +41,8 @@ class wxpay_web {
 //		var_dump($_GET);
 //		echo $openid;die;
 
-		WxPayConf_pub::$SSLCERT_PATH = dirname(__FILE__).'/cacert/apiclient_cert.pem';
-		WxPayConf_pub::$SSLKEY_PATH = dirname(__FILE__).'/cacert/apiclient_key.pem';
+		//WxPayConf_pub::$SSLCERT_PATH = dirname(__FILE__).'/cacert/apiclient_cert.pem';
+		//WxPayConf_pub::$SSLKEY_PATH = dirname(__FILE__).'/cacert/apiclient_key.pem';
 
 		//=========步骤2：使用统一支付接口，获取prepay_id============
 		//使用统一支付接口
