@@ -21,15 +21,18 @@ class pay {
 						
 	//初始化类数据
 	//$addmoney 充值金额
+	//用户id    银行类型   模块  钱
+
 	public function init($uid=null,$pay_type=null,$fukuan_type='',$addmoney=''){	
 
 		$this->db=System::load_sys_class('model');
 		$this->db->Autocommit_start();
 		$this->members = $this->db->GetOne("SELECT * FROM `@#_member` where `uid` = '$uid' for update");
-		
+		//weixin   或者  wxpay_web
 		if($this->pay_type_bank){			
 			$pay_class = $this->pay_type_bank;
 			$this->pay_type =$this->db->GetOne("SELECT * from `@#_pay` where `pay_class` = '$pay_class' and `pay_start` = '1'");
+			//是否有pay_bank
 			$this->pay_type['pay_bank'] = $pay_type;
 			
 		}		
@@ -162,9 +165,11 @@ class pay {
 		
 		$uid=$this->members['uid'];
 		$dingdancode = pay_get_dingdan_code('C');		//订单号	
+		//是否为数组
 		if(!is_array($this->pay_type)){
 			return 'not_pay';
 		}
+		//支付的名字
 		$pay_type = $this->pay_type['pay_name'];
 		$time = time();
 		if(!empty($data)){
@@ -172,6 +177,7 @@ class pay {
 		}else{
 			$scookies = '0';
 		}
+
 		$score = $this->fufen;		
 		$query = $this->db->Query("INSERT INTO `@#_member_addmoney_record` (`uid`, `code`, `money`, `pay_type`, `status`,`time`,`score`,`scookies`) VALUES ('$uid', '$dingdancode', '$money', '$pay_type','未付款', '$time','$score','$scookies')");				
 		if($query){
@@ -181,6 +187,7 @@ class pay {
 			return false;
 		}
 		
+		//$pay_type需要重新赋值
 		$pay_type = $this->pay_type;
         //print_r($pay_type);
         //exit;
@@ -190,8 +197,11 @@ class pay {
 		$config=array();
 		$config['id'] = $pay_type['pay_key']['id']['val'];			//支付合作ID
 		$config['key'] = $pay_type['pay_key']['key']['val'];		//支付KEY
-		$config['appid'] = $pay_type['pay_key']['appid']['val'];		//支付appid
+		$config['appid'] = $pay_type['pay_key']['appid']['val'];   //支付appid
 
+        var_dump($config['appid']);	
+        var_dump($config['key']);
+        var_dump($config['id']);
 		$config['shouname'] = _cfg('web_name');						//收款方
 		$config['title'] = _cfg('web_name');						//付款项目
 		$config['money'] = $money;									//付款金额$money

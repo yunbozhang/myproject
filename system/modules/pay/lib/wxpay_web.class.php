@@ -22,9 +22,9 @@ class wxpay_web {
 			$config['pay_type_data'] = unserialize($pay['pay_key']);
 		}
         var_dump($config['pay_type_data']);
-		//WxPayConf_pub::$APPID = $config['pay_type_data']['APPID']['val'];
-		//WxPayConf_pub::$MCHID = $config['pay_type_data']['id']['val'];
-		//WxPayConf_pub::$KEY = $config['pay_type_data']['key']['val'];
+		WxPayConf_pub::$APPID = $config['pay_type_data']['appid']['val'];
+		WxPayConf_pub::$MCHID = $config['pay_type_data']['id']['val'];
+		WxPayConf_pub::$KEY = $config['pay_type_data']['key']['val'];
 		// WxPayConf_pub::$APPSECRET = $config['pay_type_data']['APPSECRET']['val'];
 
 		$jsApi = new JsApi_pub();
