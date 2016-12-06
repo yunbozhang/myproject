@@ -54,13 +54,13 @@ class wxpay_web_url extends SystemAction {
 		include_once dirname(__FILE__)."/lib/wxpay_web/WxPayPubHelper.php";
 
 		$pay = $this->db->GetOne("SELECT * from `@#_pay` where `pay_class` = 'wxpay_web'");
-		$config = array();
-		$config['pay_type_data'] = unserialize($pay['pay_key']);
+		// $config = array();
+		// $config['pay_type_data'] = unserialize($pay['pay_key']);
 
-		WxPayConf_pub::$APPID = $config['pay_type_data']['APPID']['val'];
-		WxPayConf_pub::$MCHID = $config['pay_type_data']['MCHID']['val'];
-		WxPayConf_pub::$KEY = $config['pay_type_data']['KEY']['val'];
-		WxPayConf_pub::$APPSECRET = $config['pay_type_data']['APPSECRET']['val'];
+		// WxPayConf_pub::$APPID = $config['pay_type_data']['APPID']['val'];
+		// WxPayConf_pub::$MCHID = $config['pay_type_data']['MCHID']['val'];
+		// WxPayConf_pub::$KEY = $config['pay_type_data']['KEY']['val'];
+		// WxPayConf_pub::$APPSECRET = $config['pay_type_data']['APPSECRET']['val'];
 
 		$notify = new Notify_pub();
 
@@ -116,7 +116,7 @@ class wxpay_web_url extends SystemAction {
 		}
 		$uid = $dingdaninfo['uid'];
 		$time = time();
-		$up_q1 = $this->db->Query("UPDATE `@#_member_addmoney_record` SET `pay_type` = '微信公众号', `status` = '已付款' where `id` = '$dingdaninfo[id]' and `code` = '$dingdaninfo[code]'");
+		$up_q1 = $this->db->Query("UPDATE `@#_member_addmoney_record` SET `pay_type` = '微信支付', `status` = '已付款' where `id` = '$dingdaninfo[id]' and `code` = '$dingdaninfo[code]'");
 		$up_q2 = $this->db->Query("UPDATE `@#_member` SET `money` = `money` + $total_fee_t where (`uid` = '$dingdaninfo[uid]')");
 		$up_q3 = $this->db->Query("INSERT INTO `@#_member_account` (`uid`, `type`, `pay`, `content`, `money`, `time`) VALUES ('$dingdaninfo[uid]', '1', '账户', '通过微信公众号充值', '$total_fee_t', '$time')");
 		if($up_q1 && $up_q2 && $up_q3){
