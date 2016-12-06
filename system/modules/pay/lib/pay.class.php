@@ -36,12 +36,12 @@ class pay {
 			$this->pay_type['pay_bank'] = $pay_type;
 			
 		}	
-		var_dump($this->pay_type);
+		// var_dump($this->pay_type);
 		if(is_numeric($pay_type)){
 			$this->pay_type =$this->db->GetOne("SELECT * from `@#_pay` where `pay_id` = '$pay_type' and `pay_start` = '1'");
 			$this->pay_type['pay_bank'] = 'DEFAULT';
 		}
-				var_dump($this->pay_type);		
+				// var_dump($this->pay_type);		
 		$this->fukuan_type=$fukuan_type;
 		if($fukuan_type=='go_record'){		
 			return $this->go_record();
@@ -164,7 +164,7 @@ class pay {
 	/* 充值 data 其他数据 */ 
 	private function addmoney_record($money=null,$data=null){
 		$this->pay_type['pay_bank'] = 'DEFAULT';
-		var_dump($this->pay_type);
+		// var_dump($this->pay_type);
 
 		$uid=$this->members['uid'];
 		$dingdancode = pay_get_dingdan_code('C');		//订单号	
@@ -192,13 +192,13 @@ class pay {
 		
 		//$pay_type需要重新赋值
 		$pay_type = $this->pay_type;
-		var_dump($pay_type);
+		// var_dump($pay_type);
 
         //print_r($pay_type);
         //exit;
 		$paydb = System::load_app_class($pay_type['pay_class'],'pay');
 		//$pay_type['pay_key'] = unserialize($pay_type['pay_key']);
-		var_dump($pay_type);
+		// var_dump($pay_type);
 
 
 		$config=array();
@@ -206,9 +206,9 @@ class pay {
 		$config['key'] = '1qazqaz0okm2wsx9ijncvb345678dfgh';		//支付KEY
 		$config['appid'] = 'wx88924a19d22f6ecd';   //支付appid
 
-        var_dump($config['appid']);	
-        var_dump($config['key']);
-        var_dump($config['id']);
+        // var_dump($config['appid']);	
+        // var_dump($config['key']);
+        // var_dump($config['id']);
 		$config['shouname'] = _cfg('web_name');						//收款方
 		$config['title'] = _cfg('web_name');						//付款项目
 		$config['money'] = $money;									//付款金额$money

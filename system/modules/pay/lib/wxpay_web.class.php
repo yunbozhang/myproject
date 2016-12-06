@@ -21,14 +21,14 @@ class wxpay_web {
 			$pay = $this->db->GetOne("SELECT * from `@#_pay` where `pay_class` = 'wxpay_web'");
 			$config['pay_type_data'] = unserialize($pay['pay_key']);
 		}
-        var_dump($config['pay_type_data']);
+        //var_dump($config['pay_type_data']);
 		// WxPayConf_pub::$APPID = 'wx88924a19d22f6ecd';
 		// WxPayConf_pub::$MCHID = '1417446602';
 		// WxPayConf_pub::$KEY = '1qazqaz0okm2wsx9ijncvb345678dfgh';
 		// WxPayConf_pub::$APPSECRET = $config['pay_type_data']['APPSECRET']['val'];
 
 		$jsApi = new JsApi_pub();
-        var_dump($jsApi);
+        //var_dump($jsApi);
 		if (!isset($_GET['code'])){
 			$url = G_WEB_PATH.'/index.php/pay/wxpay_web_url/?money='.$config['money'].'&out_trade_no='.$config['code'];
 			$url = $jsApi->createOauthUrlForCode(urlencode($url));
