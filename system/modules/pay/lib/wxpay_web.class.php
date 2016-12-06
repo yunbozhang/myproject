@@ -56,7 +56,7 @@ class wxpay_web {
 		//spbill_create_ip已填,商户无需重复填写
 		//sign已填,商户无需重复填写
 		$unifiedOrder->setParameter("openid",$openid);
-		$unifiedOrder->setParameter("body","购买商品");//商品描述
+		$unifiedOrder->setParameter("body","码梦商城商品订单"+$config['code']);//商品描述
 		$unifiedOrder->setParameter("out_trade_no",$config['code']);//商户订单号
 		$unifiedOrder->setParameter("total_fee",$config['money']*100);//总金额
 		$unifiedOrder->setParameter("notify_url",$config['NotifyUrl']);//通知地址

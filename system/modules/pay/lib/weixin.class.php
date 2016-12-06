@@ -28,7 +28,7 @@ class weixin {
 	//spbill_create_ip已填,商户无需重复填写
 	//sign已填,商户无需重复填写
 	//iconv("gb2312","utf-8//IGNORE",
-	$unifiedOrder->setParameter("body","购买商品");//商品描述
+	$unifiedOrder->setParameter("body","码梦商城商品订单"+$out_trade_no);//商品描述
 	//自定义订单号，此处仅作举例
 	$out_trade_no = $this->config['code'];
 	$unifiedOrder->setParameter("out_trade_no",$out_trade_no);//商户订单号 
