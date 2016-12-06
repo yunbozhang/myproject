@@ -9,7 +9,7 @@ class weixin {
 	
 	public function config($config=null){
 			$this->config = $config;
-			var_dump($config);
+			//var_dump($config);
 
 	}
 	
@@ -69,12 +69,34 @@ class weixin {
 		//		//参数1表示图像大小，取值范围1-10；参数2表示质量，取值范围'L','M','Q','H'
 		if($unifiedOrderResult["code_url"] != NULL)
 		{
-					$hehe='	var url = "'.$code_url.'";var qr = qrcode(10, "M");qr.addData(url);qr.make();var wording=document.createElement("p");wording.innerHTML = "'.$saomiao.'";	var code=document.createElement("DIV");	code.innerHTML = qr.createImgTag();var element=document.getElementById("qrcode");
+					$hehe='	
+					var url = "'.$code_url.'";
+					var qr = qrcode(10, "H");
+					qr.addData(url);
+					qr.make();
+					var wording=document.createElement("p");
+					wording.innerHTML = "'.$saomiao.'";	
+					var code=document.createElement("DIV");	
+					code.innerHTML = qr.createImgTag();
+					var element=document.getElementById("qrcode");
 					element.appendChild(wording);element.appendChild(code);';
 		}
 
-		$def_url='<html><head></head><body><div align="center" id="qrcode">
-		</div></body><script src="'.$qrcode.'"></script><script>'.$hehe.'</script></html>';
+		$def_url='<!DOCTYPE html>
+		<html>
+		<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+         <title>微信支付</title>
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+		</head>
+		<body><div align="center" id="qrcode">
+		</div></body>
+		<script src="'.$qrcode.'"></script>
+		<script>'.$hehe.'</script>
+		</html>';
 echo $def_url;
 		exit;
 			//商户自行增加处理流程
