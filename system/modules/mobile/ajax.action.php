@@ -333,8 +333,7 @@ class ajax extends base {
 
 	//将数据注册到数据库
 	public function userMobile(){
-		$user_ip = _get_ip();
-		$user_ip1 = _get_ip_dizhi($user_ip);
+		$user_ip1 = _get_ip_dizhi();
 # 我的修改
 		$name= isset($_GET['username'])? $_GET['username']: $this->segment(4);
 		$pass= isset($_GET['password'])? md5($_GET['password']): md5(base64_decode($this->segment(5)));
