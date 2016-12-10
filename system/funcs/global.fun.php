@@ -139,7 +139,9 @@ function _htmtocode($content) {
 /*手机号码验证*/
 function _checkmobile($mobilephone=''){
 	if(strlen($mobilephone)!=11){	return false;	}
-	if(preg_match("/^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|14[0-9]{1}[0-9]{8}$|18[0-9]{1}[0-9]{8}$/",$mobilephone)){   
+	//if(preg_match("/^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|14[0-9]{1}[0-9]{8}$|18[0-9]{1}[0-9]{8}$/",$mobilephone)){   
+   if(preg_match("/^1[34578]\d{9}$/",$mobilephone)){   
+
 		return true;
 	}else{   
 		return false;
