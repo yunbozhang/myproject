@@ -49,7 +49,8 @@ $(function() {
             retry: "验证码发送失败，请重试",
             msgerror: "已注册,该账号需修改密码",
             ok: "该号码可以注册",
-            iperror:"您位置不在山西晋城市无法注册"
+            iperror:"您位置不在山西晋城市无法注册",
+            checkerror:"确认手机号,如无误请联系管理员处理"
         };
 
 
@@ -145,6 +146,7 @@ $(function() {
                             n()
                         } else {
                             k = 0
+                            i(l.checkerror)
                         }
                     }
                 }

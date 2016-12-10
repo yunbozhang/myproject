@@ -323,6 +323,8 @@ class ajax extends base {
 		    $user['state']=0;//表示数据库里没有该帐号
 		}
 
+		}else{
+			$user['state']=3;
 		}
 		
 
