@@ -74,7 +74,7 @@ $(function() {
 				}
 				
             } else {
-                h.addClass("z-pay-grayC").html('<s class="z-arrow"></s>选择网银支付').nextAll().hide();
+                // h.addClass("z-pay-grayC").html('<s class="z-arrow"></s>选择网银支付').nextAll().hide();
                 o = false
             }
         };
@@ -184,7 +184,7 @@ $(function() {
 			banktype='CMBCHINA-WAP';
 			checkpay='bank'
         } else {		 
-            h.addClass("z-pay-grayC").nextAll().hide();
+            //h.addClass("z-pay-grayC").nextAll().hide();
             o = false
         }
         var s = $("#btnPay");
