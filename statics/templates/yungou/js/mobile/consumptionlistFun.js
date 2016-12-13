@@ -41,7 +41,7 @@ $(function() {
                         var C = D.listItems;
                         var A = C.length;
                         for (var z = 0; z < A; z++) {
-                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>￥" + C[z].money + "</span><span>" + C[z].content + "</span></li>"
+                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + '</span><span>￥' + C[z].money + '</span><span>' + C[z].content + '</span></li>'
                         }
                         if (v.FIdx > 0) {
                             l.children("li").last().removeClass("bornone")
@@ -102,7 +102,7 @@ $(function() {
                         var C = D.listItems;
                         var A = C.length;
                         for (var z = 0; z < A; z++) {
-                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + "</span><span>￥" + C[z].money + "</span></li>"
+                            B += '<li class="' + (z + 1 == A ? "bornone": "") + '"><span>' + C[z].time + '</span><span>￥' + C[z].money + '</span></li>'
                         }
                         if (v.FIdx > 0) {
                             i.children("li").last().removeClass("bornone")
@@ -191,5 +191,5 @@ $(function() {
             }
         })
     };
-    Base.getScript(Gobal.Skin + "/js/mobile/Comm.js", a)
+    Base.getScript(Gobal.Skin + "/js/mobile/pageDialog.js", a)
 });

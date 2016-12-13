@@ -14,7 +14,7 @@
 
     <header class="g-header">
         <div class="head-l">
-	        <a href="javascript:;" onclick="history.go(-1)" class="z-HReturn"><s></s><b>返回</b></a>
+	        <a href="javascript:;" onclick="history.go(-1);" class="z-HReturn"><s></s><b>返回</b></a>
         </div>
         <h2>帐户充值</h2>
         <div class="head-r">
@@ -62,6 +62,16 @@ function GetVerNum(){var D=new Date();return D.getFullYear().toString().substrin
 Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js?v='+GetVerNum());
 </script>
  
+<script  language="javascript" type="text/javascript">
+if(window.name != "bencalie"){
+     location.reload();
+     window.name = "bencalie";
+}
+else{
+     window.name = "";
+}
+</script>
+
 </div>
 </body>
 </html>
