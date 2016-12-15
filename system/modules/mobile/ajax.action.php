@@ -143,7 +143,7 @@ class ajax extends base {
 			      if(isset($cartbs) && $cartbs=='cart'){
 	                $Mcartlist[$ShopId]['num']=$ShopNum;
 				  }else{
-				    $Mcartlist[$ShopId]['num']=$val['num']+$ShopNum;
+				    $Mcartlist[$ShopId]['num']=$val['num'];
 				  }
 				  $shopis=1;
 			   }else{
