@@ -70,7 +70,7 @@ var addNumToCartFun = null; (function() {
     var a = $("#fLoginInfo");
     GetJPData(Gobal.Webpath, "ajax", "init",
     function(h) {       
-        var g = '<span><a href="'+Gobal.Webpath+'/mobile/mobile">首页</a><b></b></span><span><a href='+Gobal.Webpath+'/mobile/mobile/about>新手指南</a><b></b></span>';
+        var g = '<span><a href="'+Gobal.Webpath+'/mobile/mobile">首页</a><b></b></span>';
         if (h.code == 0) {		   
             g = g + '<span><a href="'+Gobal.Webpath+'/mobile/home" class="Member">' + h.username + '</a><a href="'+Gobal.Webpath+'/mobile/user/cook_end" class="Exit">退出</a></span>'
         } else {
