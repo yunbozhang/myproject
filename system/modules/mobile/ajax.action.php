@@ -53,8 +53,8 @@ class ajax extends base {
 		   $slides['listItems'][$key]['alt']=$val['color'];
 		   $slides['listItems'][$key]['url']=WEB_PATH."/mobile/mobile/item/".$shopid;
 		   $slides['listItems'][$key]['src']=G_WEB_PATH."/statics/uploads/".$val['img'];
-		   $slides['listItems'][$key]['width']='614PX';
-		   $slides['listItems'][$key]['height']='110PX';
+		   //$slides['listItems'][$key]['width']='100%';
+		   $slides['listItems'][$key]['height']='150PX';
 
 		}
 
