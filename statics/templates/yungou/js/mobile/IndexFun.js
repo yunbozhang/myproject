@@ -81,7 +81,7 @@ $(function() {
                     n.addClass("slides");
                     var p = "";
                     for (var o = 0; o < r.length; o++) {
-                        var m = '<li style="background-color:' + r[o].alt + ';"><a href="' + r[o].url + '"><img src="' + r[o].src + '" alt="" width="' + r[o].width + '" height="' + r[o].height + '" /></a></li>';
+                        var m = '<li style="background-color:' + r[o].alt + ';"><img src="' + r[o].src + '" alt="" width="' + r[o].width + '" height="' + r[o].height + '" /></a></li>';
                         n.append(m)
                     }
                     var q = $("#sliderBox");
