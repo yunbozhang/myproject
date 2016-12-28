@@ -37,7 +37,7 @@ $(function() {
                     var u = 0;
                     for (var p = 0; p < r; p++) {
                         var m = parseInt(n[p].codeState);
-                        o += "<li onclick=\"location.href='"+Gobal.Webpath+"mobile/user/buyDetail/" + n[p].shopid + '\'"><a class="fl z-Limg">';
+                        o += "<li onclick=\"location.href='"+Gobal.Webpath+"/mobile/user/buyDetail/" + n[p].shopid + '\'"><a class="fl z-Limg">';
                         if (m == 1) {
                             o += '<span class="z-Imgbg z-ImgbgC01"></span><em class="z-Imgtxt">进行中...</em>'
                         } else {
