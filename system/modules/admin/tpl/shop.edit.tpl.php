@@ -87,12 +87,12 @@ $(function(){
 			</td>
 		</tr>      
          <!------20140901增加---------------->     
-         <tr>
+         <!-- <tr>
 			<td align="right" style="width:120px"><font color="red">*</font>约定中奖会员ID：</td>
 			<td>
             <input   type="text" id="zhiding" value="<?php echo $shopinfo['zhiding']; ?>" name="zhiding" >  *为空或0表示不指定       
             </td>
-		</tr>      
+		</tr>  -->     
 <!------20140901增加结束---------------->    
         <tr>
 			<td align="right" style="width:120px"><font color="red">*</font>商品标题：</td>
