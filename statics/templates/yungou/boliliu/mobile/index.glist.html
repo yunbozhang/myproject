@@ -37,7 +37,7 @@
                     <a href="javascript:;">商品分类<s class="arrowUp"></s></a>
                     <dl style="display:none;">
                         <dd type="0" class="sOrange"><a href="javascript:;">全部</a></dd>
-						{wc:getlist sql="select * from `@#_category` where `model`='1'"}
+						{wc:getlist sql="select * from `@#_category` where `model`='1'and `parentid`!='0'order by `parentid`"}
 						{wc:loop $data $categoryx}
 						<dd><a id="{wc:$categoryx['cateid']}" href="javascript:;">{wc:$categoryx['name']}</a></dd>
 						{wc:loop:end}
