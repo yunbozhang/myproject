@@ -5,6 +5,8 @@ System::load_app_fun('my','go');
 System::load_app_fun('user','go');
 System::load_sys_fun('send');
 System::load_sys_fun('user');
+System::load_sys_fun('global');
+
 class ajax extends base {
      private $Mcartlist;
 
@@ -269,8 +271,10 @@ class ajax extends base {
 			//登录成功
 			_setcookie("uid",_encrypt($member['uid']),60*60*24*7);
 			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);
+            _wxsendmobile($member['mobile'],'');
 
 			$user['state']=0;
+
 		}
 
 		echo json_encode($user);
@@ -278,13 +282,14 @@ class ajax extends base {
 
 	//登录成功后
 	public function loginok(){
-
+      
 	  $user['Code']=0;
 	  $name= $this->segment(4);
       $time=time();
 	  $sql="UPDATE `@#_member` SET login_time='$time' where `mobile`='$name'";
 	  $this->db->Query($sql);
 	  echo json_encode($user);
+
 	}
 	/***********************************注册*********************************/
 

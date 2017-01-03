@@ -66,6 +66,30 @@ function send_mobile_shop_code($mobile=null,$uid=null,$code=null){
 }
 
 
+function wxsend_mobile_shop_code($mobile=null,$uid=null,$code=null){
+		if(!$uid)_message("发送用户手机获奖短信,用户ID不能为空！");
+		if(!$mobile)_message("发送用户手机获奖短信,手机号码不能为空!");
+		if(!$code)_message("发送用户手机获奖短信,中奖码不能为空!");
+		$db=System::load_sys_class('model');					
+		$template = $db->GetOne("select * from `@#_caches` where `key` = 'template_mobile_shop'");
+		
+		if(!$template){
+			$template = array();
+			$content =  "你在"._cfg("web_name")."够买的商品已中奖,中奖码是:".$code;
+		}	
+		if(empty($template['value'])){
+			$content =  "你在"._cfg("web_name")."够买的商品已中奖,中奖码是:".$code;
+		}else{
+			if(strpos($template['value'],"00000000") == true){
+					$content= str_ireplace("00000000",$code,$template['value']);
+			}else{
+					$content = $template['value'].$code;
+			}
+		}
+			
+		return _wxsendmobile($mobile,$content);
+}
+
 
 /**
 *	发送用户验证邮箱

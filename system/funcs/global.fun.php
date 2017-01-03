@@ -459,6 +459,27 @@ function _sendmobile($mobiles='',$content=''){
 	return $sendarr;
 }
 
+function _wxsendmobile($mobiles='',$content=''){
+	$mobiles=str_replace("，",',',$mobiles);
+	$mobiles=str_replace(" ",'',$mobiles);
+	$mobiles=trim($mobiles," ");
+	$mobiles=trim($mobiles,",");
+	$sends=System::load_sys_class('wxsendmobile');
+	$config=array();
+	$config['mobile']=$mobiles;
+	$config['content']= $content;	
+	$config['ext']='';
+	$config['stime']='';
+	$config['rrid']='';
+	$cok=$sends->init($config);
+	if(!$cok){
+		return array('-1','配置不正确!');
+	}	
+	$sends->send();
+	$sendarr=array($sends->error,$sends->v);
+	return $sendarr;
+}
+
 /**
 *
 *	页面执行时间统计
