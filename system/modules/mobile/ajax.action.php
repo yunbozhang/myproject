@@ -271,7 +271,6 @@ class ajax extends base {
 			//登录成功
 			_setcookie("uid",_encrypt($member['uid']),60*60*24*7);
 			_setcookie("ushell",_encrypt(md5($member['uid'].$member['password'].$member['mobile'].$member['email'])),60*60*24*7);
-            _wxsendmobile($member['mobile'],'');
 
 			$user['state']=0;
 

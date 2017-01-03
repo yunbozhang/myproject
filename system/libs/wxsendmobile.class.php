@@ -88,7 +88,7 @@ class wxsendmobile {
 
 		$appid="wx88924a19d22f6ecd";
         $appsecret="6b1d29866e1011d5b007c417d4c613c2";
-        $json_token=http_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret);
+        $json_token=http_request("http://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret);
         $access_token=json_decode($json_token,true);
         //获得access_token
          $this->access_token=$access_token[access_token];
@@ -112,7 +112,7 @@ class wxsendmobile {
 		$json_template=json_encode($template);
         //echo $json_template;
         //echo $this->access_token;
-        $url="https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".$this->access_token;
+        $url="http://api.weixin.qq.com/cgi-bin/message/template/send?access_token=".$this->access_token;
         $res=http_request($url,urldecode($json_template));
         if ($res[errcode]==0) echo '模板消息发送成功!';
         //print_r($res);
