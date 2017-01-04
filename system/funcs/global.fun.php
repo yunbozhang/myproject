@@ -476,8 +476,6 @@ function _wxsendmobile($mobiles='',$content=''){
 		return array('-1','配置不正确!');
 	}	
 	$sends->send();
-	$sendarr=array($sends->error,$sends->v);
-	return $sendarr;
 }
 
 /**

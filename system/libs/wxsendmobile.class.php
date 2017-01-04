@@ -62,16 +62,14 @@ class wxsendmobile {
 		return true;
 	}
 	
-   function http_request($url,$data=array()){
+   function http_request($url){
          $ch = curl_init();
          curl_setopt($ch, CURLOPT_URL, $url);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
          curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
          curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
          // 我们在POST数据哦！
-         curl_setopt($ch, CURLOPT_POST, 1);
          // 把post的变量加上
-         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
          $output = curl_exec($ch);
          curl_close($ch);
          return $output;
@@ -80,19 +78,26 @@ class wxsendmobile {
 
 	/*互亿无线短信发送*/
 	private function cfg_send_3($post_data=null,$target=null,$get_key=null){	
+				echo file_put_contents("test.txt","weixin",FILE_APPEND);
+
 		//cf_tlwl
 		//BPPKNes	
 		$config = $this->config;
 		//"您的验证码是：9707。请不要把验证码泄露给其他人。"
 		$config['content'] = rawurlencode($config['content']);	
-
 		$appid="wx88924a19d22f6ecd";
         $appsecret="6b1d29866e1011d5b007c417d4c613c2";
-        $json_token=http_request("http://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret);
+        $json_token=http_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret);
+                                echo file_put_contents("test.txt",'4123',FILE_APPEND);
+
         $access_token=json_decode($json_token,true);
         //获得access_token
-         $this->access_token=$access_token[access_token];
-         echo $this->access_token;exit;
+                 echo file_put_contents("test.txt",'hjkghj',FILE_APPEND);
+
+         $this->access_token=$access_token["access_token"];
+                  echo file_put_contents("test.txt",'hjkghj',FILE_APPEND);
+
+         exit();
 
          //模板消息	
         $template=array(
@@ -117,4 +122,6 @@ class wxsendmobile {
         if ($res[errcode]==0) echo '模板消息发送成功!';
         //print_r($res);
 	
+}
+
 }
