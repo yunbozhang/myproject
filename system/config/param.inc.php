@@ -8,7 +8,7 @@ return array (
   'routes' => array(		
 			'login' => "member/user/login",
 			'login/(:any)' => "member/user/login/$1",
-			'admin' => "admin/user/login",
+			'geekit' => "geekit/user/login",
 			'uname/(:any)' => 'member/us/uname/$1',
 			'userbuy/(:any)' => 'member/us/userbuy/$1',
 			'userraffle/(:any)' => 'member/us/userraffle/$1',

@@ -18,7 +18,7 @@ return array(
 'tablepre' => 'QCNf',//
 'index_name' => '?',//隐藏首页文件名
 'expstr' => '/',//url分隔符号
-'admindir' => 'admin',//后台管理文件夹
+'admindir' => 'geekit',//后台管理文件夹
 'qq' => '1207269646',//qq
 'cell' => '0356-4870691',//联系电话
 'web_logo' => 'banner/logo.png',//logo
