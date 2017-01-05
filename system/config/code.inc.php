@@ -1,1 +1,1 @@
-<?php return array('code'=>'mouse.taobao.com'); ?>
+<?php return array('code'=>'bogeekit!@#'); ?>

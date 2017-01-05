@@ -15,7 +15,6 @@ class setting extends admin {
 						array("email","邮箱配置",ROUTE_M.'/'.ROUTE_C."/email"),
 						array("mobile","短信配置",ROUTE_M.'/'.ROUTE_C."/mobile"),
 						array("payset","支付方式","pay/pay/pay_list"),						
-						array("empower","授权查询",ROUTE_M.'/'.ROUTE_C."/empower"),
 						array("domain","模块域名绑定",ROUTE_M.'/'.ROUTE_C."/domain"),
 						array("send","<b>中奖通知设置</b>",ROUTE_M.'/'.ROUTE_C."/sendconfig")
 		);
@@ -557,40 +556,6 @@ HTML;
 		
 		include $this->tpl(ROUTE_M,'config.watermark');
 	}
-	
-	
-	//授权
-	public function empower(){
-		if(isset($_POST['dosubmit'])){
-			$code=isset($_POST['code']) ? $_POST['code'] : null;
-			if($code==null){
-				_message('您输入的授权码格式不正确!');
-			}
-			$code = strtoupper($code);		
-			$check = @fopen("","r");  
-			if(!$check){  
-				_message('您输入的授权码不正确!'); 
-			}   
-			$html="
-				<?php 
-					return array('code' => '$code');
-				?>
-			";
-			$path = G_CONFIG.'/'.'code.inc.php';
-			file_put_contents($path,$html);
-			_message("绑定成功");
-			
-		}
-		$code = System::load_sys_config("code","code");		
-		if($code){
-			echo <<<HTML
-			<iframe src="" width="100%" height="100%" scrolling="no"  style=" border:0px;background:#fff; text-align:center"></iframe>
-HTML;
-		}else{
-			include $this->tpl(ROUTE_M,'config.empower');	
-		}		
-	}
-	
 	//验证码配置
 	public function checkcode(){
 			if(isset($_POST['type'])){

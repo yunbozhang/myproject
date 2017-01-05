@@ -39,7 +39,6 @@ a:hover{text-decoration:underline;}
         <li><a href="<?php echo G_MODULE_PATH; ?>/setting/email">邮箱设置</a></li>
         <li><a href="<?php echo G_MODULE_PATH; ?>/setting/mobile">短信设置</a></li>
         <li><a href="<?php echo WEB_PATH; ?>/pay/pay/pay_list">支付设置</a></li>
-        <li><a href="<?php echo G_MODULE_PATH; ?>/setting/empower">授权证书</a></li>
         <li class="title2">管理员管理</li>
         <li><a href="<?php echo G_MODULE_PATH; ?>/user/lists">管理员管理</a></li>
         <li><a href="<?php echo G_MODULE_PATH; ?>/user/reg">添加管理员</a></li>
