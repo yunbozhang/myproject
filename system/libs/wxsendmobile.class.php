@@ -62,7 +62,7 @@ class wxsendmobile {
 		return true;
 	}
 	
-   function http_request($url){
+    private function http_request($url){
          $ch = curl_init();
          curl_setopt($ch, CURLOPT_URL, $url);
          curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -87,12 +87,10 @@ class wxsendmobile {
 		$config['content'] = rawurlencode($config['content']);	
 		$appid="wx88924a19d22f6ecd";
         $appsecret="6b1d29866e1011d5b007c417d4c613c2";
-        $json_token=http_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret);
-                                echo file_put_contents("test.txt",'4123',FILE_APPEND);
-
+        $json_token=$this->http_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret);
+             //$json_token  = file_get_contents("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret);
         $access_token=json_decode($json_token,true);
         //获得access_token
-                 echo file_put_contents("test.txt",'hjkghj',FILE_APPEND);
 
          $this->access_token=$access_token["access_token"];
                   echo file_put_contents("test.txt",'hjkghj',FILE_APPEND);
