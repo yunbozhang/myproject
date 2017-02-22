@@ -20,7 +20,7 @@
 				'watermark_off' => '1',
 				'watermark_condition' => array('width'=>'100','height'=>"100"),
 				'watermark_type' => 'text',
-				'watermark_text' => array('text'=>"www.mamenggou.com",'color'=>"#ff0000",'size'=>"15",'font'=>"/data/home/qxu1192030147/htdocs/system/modules/api/lib/"),
+				'watermark_text' => array('text'=>"mamenggou.com",'color'=>"#ff0000",'size'=>"15",'font'=>"/data/home/qxu1192030147/htdocs/system/modules/api/lib/"),
 				'watermark_image' => 'banner/20141205/93445116772218.jpg',
 				'watermark_position' => 'c',
 				'watermark_apache' => '50',
