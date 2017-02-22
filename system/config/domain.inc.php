@@ -1,7 +1,7 @@
 <?php 
 
 return array (
-  'www.mamenggou.com' => 
+  'mamenggou.com' => 
   array (
     'm' => 'mobile',
     'c' => 'mobile',
