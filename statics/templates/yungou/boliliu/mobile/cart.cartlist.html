@@ -91,6 +91,15 @@ var Base={head:document.getElementsByTagName("head")[0]||document.documentElemen
 function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
 Base.getScript('{G_TEMPLATES_JS}/mobile/Bottom.js');
 </script>
+<script  language="javascript" type="text/javascript">
+if(window.name != "bencalie"){
+     location.reload();
+     window.name = "bencalie";
+}
+else{
+     window.name = "";
+}
+</script>
 
 </div>
 </body>

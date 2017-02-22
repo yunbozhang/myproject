@@ -1,10 +1,10 @@
 <?php 
  defined('G_IN_SYSTEM') or exit('No permission resources.'); 
 return array( 
-'web_name' => '码梦购',//网站名
-'web_key' => '是一个码梦购系统',//网站关键字
-'web_des' => '是一个码梦购系统',//网站介绍
-'web_path' => 'http://www.mymy.com',//网站地址
+'web_name' => '码梦商城',//网站名
+'web_key' => '是一个码梦系统',//网站关键字
+'web_des' => '是一个码梦系统',//网站介绍
+'web_path' => 'http://127.0.0.1',//网站地址
 'templates_edit' => '1',//是否允许在线编辑模板
 'templates_name' => 'yungou',//当前模板方案
 'charset' => 'utf-8',//网站字符集
@@ -16,14 +16,15 @@ return array(
 'web_off' => '1',//网站是否开启
 'web_off_text' => '网站关闭。升级中....',//关闭原因
 'tablepre' => 'QCNf',//
-'index_name' => '?',//隐藏首页文件名
+'index_name' => 'index.php',//隐藏首页文件名
 'expstr' => '/',//url分隔符号
 'admindir' => 'geekit',//后台管理文件夹
 'qq' => '1207269646',//qq
 'cell' => '0356-4870691',//联系电话
-'web_logo' => 'banner/logo.png',//logo
-'web_copyright' => 'Copyright © 2016 - 2017, 版权所有 京ICP备16016157号-1',//版权
-'web_name_two' => '码梦购',//短网站名
+'web_logo' => 'banner/20161217/52108053962535.png',//logo
+'web_copyright' => 'Copyright :2016 - 2017, 版权所有 京ICP备16016157号-1
+',//版权
+'web_name_two' => '码梦',//短网站名
 'qq_qun' => '123456|456789',//QQ群
 'goods_end_time' => '30',//开奖动画秒数(单位秒)
 ); 
