@@ -20,10 +20,9 @@ return array(
 'expstr' => '/',//url分隔符号
 'admindir' => 'geekit',//后台管理文件夹
 'qq' => '1207269646',//qq
-'cell' => '0356-4870691',//联系电话
+'cell' => '18910403461',//联系电话
 'web_logo' => 'banner/20161217/52108053962535.png',//logo
-'web_copyright' => 'Copyright :2016 - 2017, 版权所有 京ICP备16016157号-1
-',//版权
+'web_copyright' => 'Copyright :2016 - 2017, 版权所有 晋ICP备17000785号-1',//版权
 'web_name_two' => '码梦',//短网站名
 'qq_qun' => '123456|456789',//QQ群
 'goods_end_time' => '30',//开奖动画秒数(单位秒)
